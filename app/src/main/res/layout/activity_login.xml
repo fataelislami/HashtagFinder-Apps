@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Views.LoginActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:background="@drawable/background_gradient"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+        <ImageView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutInput"
+        android:layout_width="380dp"
+        android:layout_height="350dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/background_white"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Email" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:id="@+id/edtEmailLogin"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/ic_person"
+            android:drawablePadding="20dp"
+            android:hint="Masukan Email" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Password" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:id="@+id/edtPasswordLogin"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/ic_person"
+            android:drawablePadding="20dp"
+            android:hint="******" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rec_gradient"
+            android:text="Masuk"
+            android:textAllCaps="false"
+            android:textColor="#FFF" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:id="@+id/txtLoginRegister"
+            android:layout_height="wrap_content"
+            android:text="Daftar"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:id="@+id/txtLoginSkip"
+            android:layout_height="wrap_content"
+            android:text="Lewat Dulu"
+            />
+
+    </LinearLayout>
+
+    <!--<ImageView-->
+    <!--android:id="@+id/imageVIew"-->
+    <!--android:layout_marginTop="15dp"-->
+    <!--android:layout_marginBottom="5dp"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:src="@drawable/logo"-->
+    <!--android:padding="5dp"-->
+    <!--android:layout_width="70dp"-->
+    <!--android:layout_height="70dp" />-->
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:src="@drawable/splash_logo" />
+</RelativeLayout>

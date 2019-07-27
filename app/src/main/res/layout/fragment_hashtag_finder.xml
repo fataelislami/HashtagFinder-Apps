@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Views.HashtagFinderFragment">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:id="@+id/spin_kit_container"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@color/colorPrimary"
+        >
+
+        <com.github.ybq.android.spinkit.SpinKitView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/spin_kit"
+            style="@style/SpinKitView.CubeGrid"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            app:SpinKit_Color="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="#FFFFFF"
+            android:textAlignment="center"
+            android:fontFamily="@font/nunito_bold"
+            android:textSize="15dp"
+            android:text="Sedang mencari hashtag yang pass, sabar.."
+            app:layout_constraintEnd_toEndOf="@+id/spin_kit"
+            app:layout_constraintStart_toStartOf="@+id/spin_kit"
+            app:layout_constraintTop_toBottomOf="@+id/spin_kit" />
+
+    </android.support.constraint.ConstraintLayout>
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/btnUploadImage"
+        android:layout_width="match_parent"
+        android:layout_height="257dp"
+        android:layout_weight="2"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <android.support.design.widget.TabLayout
+        android:layout_width="match_parent"
+        android:id="@+id/tabHashtag"
+        android:visibility="gone"
+        android:layout_height="60dp">
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hashtag"
+             />
+        <android.support.design.widget.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Caption"
+            />
+    </android.support.design.widget.TabLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvHashtag"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:visibility="gone"
+        ></android.support.v7.widget.RecyclerView>
+    <EditText
+        android:id="@+id/edtHashtag"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:visibility="gone"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/btnFindHashtag"
+        android:layout_margin="10dp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/nunito_bold"
+        android:background="@drawable/round_button"
+        android:layout_height="wrap_content"
+        android:text="Cari Hashtag"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lnCaption"
+        android:visibility="gone"
+        >
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/btnSaveHashtag"
+            android:layout_margin="10dp"
+            android:textColor="#FFFFFF"
+            android:visibility="visible"
+            android:fontFamily="@font/nunito_bold"
+            android:background="@drawable/round_button"
+            android:layout_height="wrap_content"
+            android:text="Simpan Caption"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/btnCopyHashtag"
+            android:layout_margin="10dp"
+            android:textColor="#FFFFFF"
+            android:visibility="visible"
+            android:fontFamily="@font/nunito_bold"
+            android:background="@drawable/round_button"
+            android:layout_height="wrap_content"
+            android:text="Salin Caption"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>
