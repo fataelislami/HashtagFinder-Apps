@@ -1,14 +1,22 @@
 package com.fataelislami.clola.Views;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.fataelislami.clola.R;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +31,13 @@ public class AboutFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    String nama="";
+    String email="";
+    @BindView(R.id.txtAboutName)
+    TextView txtAboutName;
+    @BindView(R.id.txtAboutEmail) TextView txtAboutEmail;
+    SharedPreferences.Editor editor;
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -65,7 +80,22 @@ public class AboutFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_about, container, false);
+        View view=inflater.inflate(R.layout.fragment_about, container, false);
+        ButterKnife.bind(this,view);
+        SharedPreferences pref = getContext().getSharedPreferences("AuthLogin", 0); // 0 - for private mode
+        String statusLogin=pref.getString("status",null);
+        if(statusLogin==null){
+            Toast.makeText(getContext(),"Harap Login Terlebih Dahulu",Toast.LENGTH_LONG).show();
+            Intent i=new Intent(getContext(),LoginActivity.class);
+            startActivity(i);
+        }
+        nama=pref.getString("name",null);
+        email=pref.getString("email",null);
+        txtAboutName.setText(nama);
+        txtAboutEmail.setText(email);
+
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -73,6 +103,17 @@ public class AboutFragment extends Fragment {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
+    }
+
+    @OnClick(R.id.btnLogout)
+    public void logout(){
+        SharedPreferences pref = getContext().getSharedPreferences("AuthLogin", 0);
+        editor = pref.edit();
+        editor.clear();
+        editor.commit();
+        Toast.makeText(getContext(),"Berhasil Logout",Toast.LENGTH_LONG).show();
+        Intent i=new Intent(getContext(),LoginActivity.class);
+        startActivity(i);
     }
 
     @Override

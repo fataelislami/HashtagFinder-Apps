@@ -47,6 +47,12 @@ public class RegisterActivity extends AppCompatActivity {
 //        }
     }
 
+    @OnClick(R.id.txtRegisterLogin)
+    public void login(){
+        Intent i=new Intent(this,LoginActivity.class);
+        startActivity(i);
+    }
+
     private void register(String name, String email, String password) {
         RestAPI service= ClientAPI.get(ROOT_URL).create(RestAPI.class);
         Call<RegisterModels> call=service.register(name,email,password);

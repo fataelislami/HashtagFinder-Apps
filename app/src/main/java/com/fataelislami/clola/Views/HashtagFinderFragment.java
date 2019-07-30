@@ -273,7 +273,7 @@ public class HashtagFinderFragment extends Fragment {
             @Override
             public void onFailure(Call<VisionModels> call, Throwable t) {
                 Log.d("Gagal",t.getMessage());
-                Toast.makeText(getContext(),t.getMessage(),Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(),"Ups! Gagal Memproses Data,silakan klik ulang (kadang suka gini gaes hehe)",Toast.LENGTH_LONG).show();
                 spin_kit_container.setVisibility(View.GONE);
 //                progressDialog.dismiss();
 
